@@ -1,7 +1,8 @@
 /* Default font for body */
 body {
     /* font-family: "Consolas", monospace !important;  */
-    font-family: "Alata", sans-serif !important;
+    /* font-family: "Alata", sans-serif !important; */
+    font-family: "Open Sans", sans-serif !important;
 }
 
 /* secondary font */
