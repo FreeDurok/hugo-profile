@@ -170,6 +170,9 @@
   box-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
+#single .page-content .no-scroll {
+  overflow: hidden;
+}
 
 /* sidebar */
 

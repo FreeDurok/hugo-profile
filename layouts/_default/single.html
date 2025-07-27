@@ -148,9 +148,26 @@
 
   document.addEventListener('click', e => {
     if (e.target.tagName === 'IMG') {
-      e.target.classList.toggle('zoomed');
+      const zoomed = document.querySelector('.zoomed');
+
+      // se c'è già un'immagine zoomata e clicco su di essa -> chiudi
+      if (zoomed && e.target === zoomed) {
+        zoomed.classList.remove('zoomed');
+        document.body.classList.remove('no-scroll');
+        return;
+      }
+
+      // se c'è già un'altra immagine zoomata -> chiudi prima quella
+      if (zoomed) {
+        zoomed.classList.remove('zoomed');
+      }
+
+      // applica zoom alla nuova immagine
+      e.target.classList.add('zoomed');
+      document.body.classList.add('no-scroll');
     }
   });
+
 </script>
 
 {{ if or (.Site.Params.singlePages.readTime.enable | default true) (.Params.enableReadingTime) }}
