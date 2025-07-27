@@ -153,6 +153,9 @@
 }
 
 
+/* image zoom */
+
+
 #single .page-content img {
   cursor: zoom-in;
   transition: transform 0.3s ease;
