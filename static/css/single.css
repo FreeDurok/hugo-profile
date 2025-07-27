@@ -152,6 +152,25 @@
     padding-left: 1.5em;
 }
 
+
+#single .page-content img {
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+#single .zoomed {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  max-width: 90% !important;
+  max-height: 90% !important;
+  transform: translate(-50%, -50%) scale(1.5) !important;
+  z-index: 9999 !important;
+  cursor: zoom-out !important;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+
 /* sidebar */
 
 #single aside {

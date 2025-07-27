@@ -145,6 +145,12 @@
   } else {
     stickySideBarElem.style.top = "50px";
   }
+
+  document.addEventListener('click', e => {
+    if (e.target.tagName === 'IMG') {
+      e.target.classList.toggle('zoomed');
+    }
+  });
 </script>
 
 {{ if or (.Site.Params.singlePages.readTime.enable | default true) (.Params.enableReadingTime) }}
