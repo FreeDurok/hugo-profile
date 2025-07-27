@@ -146,49 +146,25 @@
     stickySideBarElem.style.top = "50px";
   }
 
-
-  // Image zoom functionality
-
-  const overlay = document.createElement('div');
-  overlay.style.cssText = `
-    display:none;
-    position:fixed;
-    top:0;left:0;
-    width:100vw;height:100vh;
-    background:rgba(0,0,0,0.8);
-    z-index:9998;
-  `;
-  document.body.appendChild(overlay);
-
   document.addEventListener('click', e => {
-    // Click su immagine dentro #single .page-content
-    if (e.target.closest('#single .page-content img') && overlay.style.display === 'none') {
-      // clona l'immagine e applica la classe zoomed (usa il tuo CSS)
-      const img = e.target.cloneNode();
-      img.classList.add('zoomed');
-      overlay.innerHTML = '';
-      overlay.appendChild(img);
+    if (e.target.tagName === 'IMG') {
+      const zoomed = document.querySelector('.zoomed');
 
-      // mostra overlay
-      overlay.style.display = 'block';
+      // se c'è già un'immagine zoomata e clicco su di essa -> chiudi
+      if (zoomed && e.target === zoomed) {
+        zoomed.classList.remove('zoomed');
+        document.body.classList.remove('no-scroll');
+        return;
+      }
+
+      // se c'è già un'altra immagine zoomata -> chiudi prima quella
+      if (zoomed) {
+        zoomed.classList.remove('zoomed');
+      }
+
+      // applica zoom alla nuova immagine
+      e.target.classList.add('zoomed');
       document.body.classList.add('no-scroll');
-      return;
-    }
-
-    // Se clicco sull'immagine clonata dentro l'overlay -> chiudi
-    if (e.target.parentElement === overlay) {
-      overlay.style.display = 'none';
-      overlay.innerHTML = '';
-      document.body.classList.remove('no-scroll');
-    }
-  });
-
-  // Chiudi anche con ESC
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      overlay.style.display = 'none';
-      overlay.innerHTML = '';
-      document.body.classList.remove('no-scroll');
     }
   });
 
