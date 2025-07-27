@@ -122,9 +122,9 @@
   color: var(--text-secondary-color) !important;
 }
 
-#single .page-content code {
+/* #single .page-content code {
   color: var(--primary-color) !important;
-}
+} */
 
 /* kbd and mark */
 
