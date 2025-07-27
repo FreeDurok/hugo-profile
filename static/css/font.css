@@ -1,9 +1,11 @@
 /* Default font for body */
 body {
-    font-family: "Lora", serif !important; 
+    /* font-family: "Lora", serif !important;  */
     /* font-family: "Consolas", monospace !important;  */
     /* font-family: "Alata", sans-serif !important; */
     /* font-family: "Open Sans", sans-serif !important; */
+    font-family: "Roboto", sans-serif !important;
+}
 }
 
 /* secondary font */
