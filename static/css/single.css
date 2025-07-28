@@ -141,8 +141,8 @@
 /* list */
 
 #single .page-content ol, #single .page-content ul {
-    margin-bottom: 1.2em;
-    padding-left: 1.5em;
+    margin-bottom: 1.0em;
+    /* padding-left: 1.5em; */
     list-style-position: inside;
     opacity: 0.9;
 }
