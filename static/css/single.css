@@ -70,8 +70,6 @@
 
 #single .page-content blockquote, #single .page-content blockquote * {
     background-color: var(--secondary-color) !important;
-    margin-bottom: 0;
-
 }
 
 /* table */
